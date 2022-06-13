@@ -37,7 +37,7 @@ namespace RockMargin
 			b = (byte)(argb);
 		}
 
-		public static string GetEmbedeedFilePath(string file)
+		public static string GetEmbeddedFilePath(string file)
 		{
 			string codeBase = Assembly.GetExecutingAssembly().CodeBase;
 			var uri = new UriBuilder(codeBase);
@@ -50,7 +50,7 @@ namespace RockMargin
 		{
 			try
 			{
-				string manifest = Utils.GetEmbedeedFilePath("extension.vsixmanifest");
+				string manifest = Utils.GetEmbeddedFilePath("extension.vsixmanifest");
 				var doc = new XmlDocument();
 				doc.Load(manifest);
 				return doc["Vsix"]["Identifier"]["Version"].InnerText;

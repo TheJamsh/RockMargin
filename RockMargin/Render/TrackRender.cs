@@ -415,7 +415,7 @@ namespace RockMargin
 
 				unsafe
 				{
-					int ptr = pBackBuffer.ToInt32();
+					long ptr = pBackBuffer.ToInt64();
 					int stride = _stride;
 
 					for (int row = 0; row < height; ++row)
@@ -429,7 +429,7 @@ namespace RockMargin
 								continue;
 
 							// find the address of the pixel to draw
-							int pPixelPointer = ptr;
+							long pPixelPointer = ptr;
 							pPixelPointer += row * stride;
 							pPixelPointer += column * 4;
 
